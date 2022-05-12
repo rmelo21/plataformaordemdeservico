@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using plataformaordemdeservico.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,13 @@ namespace plataformaordemdeservico.Controllers
 {
     public class FaleConoscoController : Controller
     {
+
+        public static List<FaleConosco> lsfaleconosco = new List<FaleConosco>();
+
         // GET: FaleConoscoController
-        public ActionResult Index()
+        public ActionResult IndexFaleConosco()
         {
-            return View();
+            return View(lsfaleconosco);
         }
 
         // GET: FaleConoscoController/Details/5
@@ -22,7 +26,7 @@ namespace plataformaordemdeservico.Controllers
         }
 
         // GET: FaleConoscoController/Create
-        public ActionResult Create()
+        public ActionResult CreateFaleConosco()
         {
             return View();
         }
@@ -30,16 +34,11 @@ namespace plataformaordemdeservico.Controllers
         // POST: FaleConoscoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult CreateFaleConosco(FaleConosco faleConosco)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            lsfaleconosco.Add(faleConosco);
+            return RedirectToAction("Ver pra onde vai voltar");
+
         }
 
         // GET: FaleConoscoController/Edit/5

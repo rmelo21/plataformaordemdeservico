@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using plataformaordemdeservico.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,13 @@ namespace plataformaordemdeservico.Controllers
 {
     public class ImpressorasController : Controller
     {
+
+        public static List<Impressoras> lsimpressoras = new List<Impressoras>();
+
         // GET: ImpressorasController
-        public ActionResult Index()
+        public ActionResult IndexImpressoras()
         {
-            return View();
+            return View(lsimpressoras);
         }
 
         // GET: ImpressorasController/Details/5
@@ -22,7 +26,7 @@ namespace plataformaordemdeservico.Controllers
         }
 
         // GET: ImpressorasController/Create
-        public ActionResult Create()
+        public ActionResult CreateImpressoras()
         {
             return View();
         }
@@ -30,16 +34,10 @@ namespace plataformaordemdeservico.Controllers
         // POST: ImpressorasController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult CreateImpressoras(Impressoras impressoras)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            lsimpressoras.Add(impressoras);
+            return RedirectToAction("ver pra onde vai voltar");
         }
 
         // GET: ImpressorasController/Edit/5

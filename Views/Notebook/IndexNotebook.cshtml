@@ -1,0 +1,95 @@
+﻿@model IEnumerable<plataformaordemdeservico.Models.Notebook>
+
+@{
+    ViewData["Title"] = "IndexNotebook";
+}
+
+<h1>IndexNotebook</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cod_note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelo_note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fabricante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.serie_note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.polegadas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.carregador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descricao_note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.anexo_note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hora)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modelo_note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serie_note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.polegadas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carregador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao_note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anexo_note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hora)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

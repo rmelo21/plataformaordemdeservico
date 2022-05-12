@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using plataformaordemdeservico.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,13 @@ namespace plataformaordemdeservico.Controllers
 {
     public class MonitoresController : Controller
     {
+
+        public static List<Monitores> lsmonitores = new List<Monitores>();
+
         // GET: MonitoresController
-        public ActionResult Index()
+        public ActionResult IndexMonitores()
         {
-            return View();
+            return View(lsmonitores);
         }
 
         // GET: MonitoresController/Details/5
@@ -22,7 +26,7 @@ namespace plataformaordemdeservico.Controllers
         }
 
         // GET: MonitoresController/Create
-        public ActionResult Create()
+        public ActionResult CreateMonitores()
         {
             return View();
         }
@@ -30,16 +34,10 @@ namespace plataformaordemdeservico.Controllers
         // POST: MonitoresController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult CreateMonitores(Monitores monitores)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            lsmonitores.Add(monitores);
+            return RedirectToAction("ver pra onde vai voltar");
         }
 
         // GET: MonitoresController/Edit/5

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using plataformaordemdeservico.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,13 @@ namespace plataformaordemdeservico.Controllers
 {
     public class ComputadoresController : Controller
     {
+
+        public static List<Computadores> lscomputadores = new List<Computadores>();
+
         // GET: ComputadoresController
-        public ActionResult Index()
+        public ActionResult IndexComputadores()
         {
-            return View();
+            return View(lscomputadores);
         }
 
         // GET: ComputadoresController/Details/5
@@ -22,7 +26,7 @@ namespace plataformaordemdeservico.Controllers
         }
 
         // GET: ComputadoresController/Create
-        public ActionResult Create()
+        public ActionResult CreateComputadores()
         {
             return View();
         }
@@ -30,16 +34,11 @@ namespace plataformaordemdeservico.Controllers
         // POST: ComputadoresController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult CreateComputadores(Computadores computadores)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            lscomputadores.Add(computadores);
+            return RedirectToAction("Ver pra onde vai voltar");
+
         }
 
         // GET: ComputadoresController/Edit/5

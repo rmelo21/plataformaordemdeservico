@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using plataformaordemdeservico.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,13 @@ namespace plataformaordemdeservico.Controllers
 {
     public class NotebookController : Controller
     {
+
+        public static List<Notebook> lsnotebook = new List<Notebook>();
+
         // GET: NotebookController
-        public ActionResult Index()
+        public ActionResult IndexNotebook()
         {
-            return View();
+            return View(lsnotebook);
         }
 
         // GET: NotebookController/Details/5
@@ -22,7 +26,7 @@ namespace plataformaordemdeservico.Controllers
         }
 
         // GET: NotebookController/Create
-        public ActionResult Create()
+        public ActionResult CreateNotebook()
         {
             return View();
         }
@@ -30,16 +34,10 @@ namespace plataformaordemdeservico.Controllers
         // POST: NotebookController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult CreateNotebook(Notebook notebook)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            lsnotebook.Add(notebook);
+            return RedirectToAction("Ver pra onde vai voltar");
         }
 
         // GET: NotebookController/Edit/5

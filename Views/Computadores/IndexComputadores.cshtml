@@ -1,0 +1,77 @@
+﻿@model IEnumerable<plataformaordemdeservico.Models.Computadores>
+
+@{
+    ViewData["Title"] = "IndexComputadores";
+}
+
+<h1>IndexComputadores</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cod_comp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.processador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fabricante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descricao_comp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.anexo_comp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hora)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_comp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.processador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao_comp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anexo_comp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hora)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

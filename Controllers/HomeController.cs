@@ -28,52 +28,7 @@ namespace plataformaordemdeservico.Controllers
             return View();
         }
 
-        public IActionResult Notebook()
-        {
-            return View();
-        }
-
-        public IActionResult Computadores()
-        {
-            return View();
-        }
-
-        public IActionResult Monitores()
-        {
-            return View();
-        }
-
-        public IActionResult Impressoras()
-        {
-            return View();
-        }
-
-        public IActionResult Celulares()
-        {
-            return View();
-        }
-
-        public IActionResult MinhasSolicitacoes()
-        {
-            return View();
-        }
-
-        public IActionResult MinhaConta()
-        {
-            return View();
-        }
-
-        public IActionResult Cadastro()
-        {
-            return View();
-        }
-
         public IActionResult SobreNos()
-        {
-            return View();
-        }
-
-        public IActionResult FaleConosco()
         {
             return View();
         }

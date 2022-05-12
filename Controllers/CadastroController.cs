@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using plataformaordemdeservico.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,16 @@ namespace plataformaordemdeservico.Controllers
 {
     public class CadastroController : Controller
     {
+
+
+        public static List<Cadastro> lscadastro = new List<Cadastro>();
+
+
+
         // GET: CadastroController
-        public ActionResult Index()
+        public IActionResult IndexCadastro()
         {
-            return View();
+            return View(lscadastro);
         }
 
         // GET: CadastroController/Details/5
@@ -22,25 +29,22 @@ namespace plataformaordemdeservico.Controllers
         }
 
         // GET: CadastroController/Create
-        public ActionResult Create()
+        public IActionResult CreateCadastro()
         {
+
             return View();
         }
 
         // POST: CadastroController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+       
+        public IActionResult CreateCadastro(Cadastro cadastro)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            lscadastro.Add(cadastro);
+            return RedirectToAction("Ver pra onde vai voltar");
+           
         }
+
 
         // GET: CadastroController/Edit/5
         public ActionResult Edit(int id)
@@ -50,7 +54,7 @@ namespace plataformaordemdeservico.Controllers
 
         // POST: CadastroController/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public ActionResult Edit(int id, IFormCollection collection)
         {
             try
@@ -71,7 +75,7 @@ namespace plataformaordemdeservico.Controllers
 
         // POST: CadastroController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try

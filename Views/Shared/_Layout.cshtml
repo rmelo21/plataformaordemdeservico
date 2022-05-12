@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - plataformaordemdeservico</title>
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">plataformaordemdeservico</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,19 +25,19 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Notebbok">Notebook</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Notebook" asp-action="CreateNotebook">Notebook</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Computadores">Computadores</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Computadores" asp-action="CreateComputadores">Computadores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Computadores">Monitores</a>>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Monitores" asp-action="CreateMonitores">Monitores</a>>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Impressoras">Impressoras</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Impressoras" asp-action="CreateImpressoras">Impressoras</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Celulares">Celulares</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Celulares" asp-action="CreateCelulares">Celulares</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MinhasSolicitacoes">Minhas Solicitações</a>
@@ -46,13 +46,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MinhaConta">Minhas Conta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastre-se</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cadastro" asp-action="CreateCadastro">Cadastre-se</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SobreNos">Sobre nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FaleConosco">Fale Conosco</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="FaleConosco" asp-action="CreateFaleConosco">Fale Conosco</a>
                         </li>
                     </ul>
                 </div>

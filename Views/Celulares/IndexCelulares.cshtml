@@ -1,0 +1,83 @@
+﻿@model IEnumerable<plataformaordemdeservico.Models.Celulares>
+
+@{
+    ViewData["Title"] = "IndexCelulares";
+}
+
+<h1>IndexCelulares</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cod_cel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelo_cel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fabricante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.carregador_cel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descricao_cel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.anexo_cel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.data_aber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hora_abert)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_cel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modelo_cel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carregador_cel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao_cel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anexo_cel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_aber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hora_abert)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

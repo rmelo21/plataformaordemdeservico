@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using plataformaordemdeservico.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,41 +10,38 @@ namespace plataformaordemdeservico.Controllers
 {
     public class CelularesController : Controller
     {
+
+        public static List<Celulares> lscelulares = new List<Celulares>();
+
         // GET: CelularesController
-        public ActionResult Index()
+        public IActionResult IndexCelulares()
         {
-            return View();
+            return View(lscelulares);
         }
 
         // GET: CelularesController/Details/5
-        public ActionResult Details(int id)
+        public IActionResult Details(int id)
         {
             return View();
         }
 
         // GET: CelularesController/Create
-        public ActionResult Create()
+        public IActionResult CreateCelulares()
         {
             return View();
         }
 
         // POST: CelularesController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        
+        public IActionResult CreateCelulares(Celulares celulures)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            lscelulares.Add(celulures);
+            return RedirectToAction("Ver pra onde vai voltar");
         }
 
         // GET: CelularesController/Edit/5
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             return View();
         }
@@ -51,7 +49,7 @@ namespace plataformaordemdeservico.Controllers
         // POST: CelularesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
@@ -64,7 +62,7 @@ namespace plataformaordemdeservico.Controllers
         }
 
         // GET: CelularesController/Delete/5
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -72,7 +70,7 @@ namespace plataformaordemdeservico.Controllers
         // POST: CelularesController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {

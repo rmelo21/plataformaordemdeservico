@@ -18,5 +18,5 @@ namespace plataformaordemdeservico.Models
         public DateTime hora { get; set; }
     }
 
-}
+
 }
