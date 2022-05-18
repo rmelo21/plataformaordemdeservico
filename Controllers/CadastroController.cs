@@ -11,21 +11,29 @@ namespace plataformaordemdeservico.Controllers
     public class CadastroController : Controller
     {
 
+        private readonly Contexto db;
 
-        public static List<Cadastro> lscadastro = new List<Cadastro>();
+        public CadastroController(Contexto contexto)
+        {
+            db = contexto; 
+        }
+
+
+        //public static List<Cadastro> lscadastro = new List<Cadastro>();
 
 
 
         // GET: CadastroController
         public IActionResult IndexCadastro()
         {
-            return View(lscadastro);
+            //return View(lscadastro);
+            return View(db.DSCadastroCliente.ToList());
         }
 
         // GET: CadastroController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(db.DSCadastroCliente.ToList());
         }
 
         // GET: CadastroController/Create
@@ -38,10 +46,12 @@ namespace plataformaordemdeservico.Controllers
         // POST: CadastroController/Create
         [HttpPost]
        
-        public IActionResult CreateCadastro(Cadastro cadastro)
+        public IActionResult CreateCadastro(DSCadastroCliente cadastro)
         {
-            lscadastro.Add(cadastro);
-            return RedirectToAction("Ver pra onde vai voltar");
+            //lscadastro.Add(cadastro);
+            // return RedirectToAction("Ver pra onde vai voltar");
+            db.DSCadastroCliente.Add(cadastro);
+            db.SaveChanges();
            
         }
 

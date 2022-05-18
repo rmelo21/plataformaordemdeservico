@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace plataformaordemdeservico.Models
+namespace plataformaordemdeservico.Entidades
 {
-    public class Celulares
+    public class CelularesDb
     {
+        public int Id { get; set; }
         public int cod_cel { get; set; }
         public string modelo_cel { get; set; }
         public string fabricante { get; set; }
@@ -15,6 +16,7 @@ namespace plataformaordemdeservico.Models
         public string anexo_cel { get; set; }
         public int status { get; set; }
         public DateTime data_aber { get; set; }
-        
+        public DateTime hora_abert { get; set; }
+
     }
 }

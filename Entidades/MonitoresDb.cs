@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace plataformaordemdeservico.Models
+namespace plataformaordemdeservico.Entidades
 {
-    public class Monitores
+    public class MonitoresDb
     {
+        public int Id { get; set; }
         public int cod_mon { get; set; }
         public string modelo_mon { get; set; }
         public string fabricante { get; set; }
@@ -15,8 +16,5 @@ namespace plataformaordemdeservico.Models
         public string anexo_mon { get; set; }
         public int status { get; set; }
         public DateTime data { get; set; }
-   
     }
-
-
 }
