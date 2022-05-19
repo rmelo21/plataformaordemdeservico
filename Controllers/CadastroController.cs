@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using plataformaordemdeservico.Entidades;
 
 namespace plataformaordemdeservico.Controllers
 {
@@ -19,21 +20,17 @@ namespace plataformaordemdeservico.Controllers
         }
 
 
-        //public static List<Cadastro> lscadastro = new List<Cadastro>();
-
-
-
         // GET: CadastroController
         public IActionResult IndexCadastro()
         {
             //return View(lscadastro);
-            return View(db.DSCadastroCliente.ToList());
+            return View();
         }
 
         // GET: CadastroController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
-            return View(db.DSCadastroCliente.ToList());
+            return View();
         }
 
         // GET: CadastroController/Create
@@ -46,13 +43,14 @@ namespace plataformaordemdeservico.Controllers
         // POST: CadastroController/Create
         [HttpPost]
        
-        public IActionResult CreateCadastro(DSCadastroCliente cadastro)
+        public IActionResult CreateCadastro(CadastroDb cadastro)
         {
             //lscadastro.Add(cadastro);
             // return RedirectToAction("Ver pra onde vai voltar");
             db.DSCadastroCliente.Add(cadastro);
             db.SaveChanges();
-           
+            return RedirectToAction("Ver pra onde vai voltar");
+
         }
 
 

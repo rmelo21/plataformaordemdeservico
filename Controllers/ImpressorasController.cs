@@ -5,18 +5,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using plataformaordemdeservico.Entidades;
 
 namespace plataformaordemdeservico.Controllers
 {
     public class ImpressorasController : Controller
     {
+        private readonly Contexto db;
 
-        public static List<Impressoras> lsimpressoras = new List<Impressoras>();
+        public ImpressorasController(Contexto contexto)
+        {
+            db = contexto;
+        }
+
+        //public static List<Impressoras> lsimpressoras = new List<Impressoras>();
 
         // GET: ImpressorasController
         public ActionResult IndexImpressoras()
         {
-            return View(lsimpressoras);
+            return View();
         }
 
         // GET: ImpressorasController/Details/5
@@ -34,9 +41,9 @@ namespace plataformaordemdeservico.Controllers
         // POST: ImpressorasController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateImpressoras(Impressoras impressoras)
+        public ActionResult CreateImpressoras(ImpressorasDb impressoras)
         {
-            lsimpressoras.Add(impressoras);
+            db.DSImpressoras.Add(impressoras);
             return RedirectToAction("ver pra onde vai voltar");
         }
 

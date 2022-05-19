@@ -5,18 +5,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using plataformaordemdeservico.Entidades;
 
 namespace plataformaordemdeservico.Controllers
 {
     public class NotebookController : Controller
     {
+        private readonly Contexto db;
 
-        public static List<Notebook> lsnotebook = new List<Notebook>();
+        public NotebookController(Contexto contexto)
+        {
+            db = contexto;
+        }
+
+        //public static List<Notebook> lsnotebook = new List<Notebook>();
 
         // GET: NotebookController
         public ActionResult IndexNotebook()
         {
-            return View(lsnotebook);
+            return View();
         }
 
         // GET: NotebookController/Details/5
@@ -34,9 +41,9 @@ namespace plataformaordemdeservico.Controllers
         // POST: NotebookController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateNotebook(Notebook notebook)
+        public ActionResult CreateNotebook(NotebookDb notebook)
         {
-            lsnotebook.Add(notebook);
+            db.DSNotebook.Add(notebook);
             return RedirectToAction("Ver pra onde vai voltar");
         }
 

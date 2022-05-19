@@ -5,22 +5,30 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using plataformaordemdeservico.Entidades;
 
 namespace plataformaordemdeservico.Controllers
 {
     public class FaleConoscoController : Controller
     {
 
-        public static List<FaleConosco> lsfaleconosco = new List<FaleConosco>();
+        private readonly Contexto db;
+
+        public FaleConoscoController(Contexto contexto)
+        {
+            db = contexto;
+        }
+
+        //public static List<FaleConosco> lsfaleconosco = new List<FaleConosco>();
 
         // GET: FaleConoscoController
         public ActionResult IndexFaleConosco()
         {
-            return View(lsfaleconosco);
+            return View();
         }
 
         // GET: FaleConoscoController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
             return View();
         }
@@ -34,9 +42,9 @@ namespace plataformaordemdeservico.Controllers
         // POST: FaleConoscoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateFaleConosco(FaleConosco faleConosco)
+        public ActionResult CreateFaleConosco(FaleConoscoDb faleConosco)
         {
-            lsfaleconosco.Add(faleConosco);
+            db.DSFaleConosco.Add(faleConosco);
             return RedirectToAction("Ver pra onde vai voltar");
 
         }

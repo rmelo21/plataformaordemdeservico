@@ -15,6 +15,8 @@ namespace plataformaordemdeservico.Models
         public string anexo_cel { get; set; }
         public int status { get; set; }
         public DateTime data_aber { get; set; }
-        
+
+        public int protocolo { get; set; }
+
     }
 }

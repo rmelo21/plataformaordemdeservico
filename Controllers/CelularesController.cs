@@ -5,18 +5,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using plataformaordemdeservico.Entidades;
 
 namespace plataformaordemdeservico.Controllers
 {
     public class CelularesController : Controller
     {
+        private readonly Contexto db;
 
-        public static List<Celulares> lscelulares = new List<Celulares>();
+        public CelularesController(Contexto contexto)
+        {
+            db = contexto;
+        }
+
+        //public static List<Celulares> lscelulares = new List<Celulares>();
 
         // GET: CelularesController
         public IActionResult IndexCelulares()
         {
-            return View(lscelulares);
+            return View();
         }
 
         // GET: CelularesController/Details/5
@@ -34,9 +41,9 @@ namespace plataformaordemdeservico.Controllers
         // POST: CelularesController/Create
         [HttpPost]
         
-        public IActionResult CreateCelulares(Celulares celulures)
+        public IActionResult CreateCelulares(CelularesDb celulures)
         {
-            lscelulares.Add(celulures);
+            db.DSCelulares.Add(celulures);
             return RedirectToAction("Ver pra onde vai voltar");
         }
 

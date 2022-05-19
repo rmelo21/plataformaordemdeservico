@@ -20,5 +20,7 @@ namespace plataformaordemdeservico.Models
         public string tel_empresa { get; set; }
         public string celular { get; set; }
         public string whats { get; set; }
+
+        public int protocolo { get; set; }
     }
 }

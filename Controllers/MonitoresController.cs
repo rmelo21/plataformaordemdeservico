@@ -5,22 +5,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using plataformaordemdeservico.Entidades;
 
 namespace plataformaordemdeservico.Controllers
 {
     public class MonitoresController : Controller
     {
+        private readonly Contexto db;
 
-        public static List<Monitores> lsmonitores = new List<Monitores>();
+        public MonitoresController(Contexto contexto)
+        {
+            db = contexto;
+        }
+
+        //public static List<Monitores> lsmonitores = new List<Monitores>();
 
         // GET: MonitoresController
         public ActionResult IndexMonitores()
         {
-            return View(lsmonitores);
+            return View();
         }
 
         // GET: MonitoresController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
             return View();
         }
@@ -34,9 +41,9 @@ namespace plataformaordemdeservico.Controllers
         // POST: MonitoresController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateMonitores(Monitores monitores)
+        public ActionResult CreateMonitores(MonitoresDb monitores)
         {
-            lsmonitores.Add(monitores);
+            db.DSMonitores.Add(monitores);
             return RedirectToAction("ver pra onde vai voltar");
         }
 

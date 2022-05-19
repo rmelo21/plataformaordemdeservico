@@ -5,18 +5,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using plataformaordemdeservico.Entidades;
 
 namespace plataformaordemdeservico.Controllers
 {
     public class ComputadoresController : Controller
     {
+        private readonly Contexto db;
 
-        public static List<Computadores> lscomputadores = new List<Computadores>();
+        public ComputadoresController(Contexto contexto)
+        {
+            db = contexto;
+        }
+
+        // public static List<Computadores> lscomputadores = new List<Computadores>();
 
         // GET: ComputadoresController
         public ActionResult IndexComputadores()
         {
-            return View(lscomputadores);
+            return View();
         }
 
         // GET: ComputadoresController/Details/5
@@ -34,9 +41,9 @@ namespace plataformaordemdeservico.Controllers
         // POST: ComputadoresController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateComputadores(Computadores computadores)
+        public ActionResult CreateComputadores(ComputadoresDb computadores)
         {
-            lscomputadores.Add(computadores);
+            db.DSComputadores.Add(computadores);
             return RedirectToAction("Ver pra onde vai voltar");
 
         }

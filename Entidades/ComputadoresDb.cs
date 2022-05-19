@@ -15,5 +15,7 @@ namespace plataformaordemdeservico.Entidades
         public string anexo_comp { get; set; }
         public int status { get; set; }
         public DateTime data { get; set; }
+
+        public int protocolo { get; set; }
     }
 }

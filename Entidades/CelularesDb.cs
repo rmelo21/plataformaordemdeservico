@@ -18,5 +18,7 @@ namespace plataformaordemdeservico.Entidades
         public DateTime data_aber { get; set; }
         public DateTime hora_abert { get; set; }
 
+        public int protocolo { get; set; }
+
     }
 }
