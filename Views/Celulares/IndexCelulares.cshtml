@@ -33,12 +33,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.status)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.data_aber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.hora_abert)
-            </th>
+          
+  
             <th></th>
         </tr>
     </thead>
@@ -69,9 +65,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.data_aber)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.hora_abert)
-            </td>
+            
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |

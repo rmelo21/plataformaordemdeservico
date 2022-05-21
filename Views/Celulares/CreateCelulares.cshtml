@@ -4,9 +4,9 @@
     ViewData["Title"] = "CreateCelulares";
 }
 
-<h1>CreateCelulares</h1>
+</br></br></br></br>
 
-<h4>Celulares</h4>
+<h4>Solicitação de Reparo - Celulares</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,55 +18,51 @@
                 <span asp-validation-for="cod_cel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="modelo_cel" class="control-label"></label>
+                <label asp-for="modelo_cel" class="control-label">Modelo do celular:</label>
                 <input asp-for="modelo_cel" class="form-control" />
                 <span asp-validation-for="modelo_cel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="fabricante" class="control-label"></label>
+                <label asp-for="fabricante" class="control-label">Fabricante:</label>
                 <input asp-for="fabricante" class="form-control" />
                 <span asp-validation-for="fabricante" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="carregador_cel" class="control-label"></label>
+                <label asp-for="carregador_cel" class="control-label">Possui carregador</label>
                 <input asp-for="carregador_cel" class="form-control" />
                 <span asp-validation-for="carregador_cel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="descricao_cel" class="control-label"></label>
+                <label asp-for="descricao_cel" class="control-label">Descrição do problema:</label>
                 <input asp-for="descricao_cel" class="form-control" />
                 <span asp-validation-for="descricao_cel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="anexo_cel" class="control-label"></label>
+                <label asp-for="anexo_cel" class="control-label">anexo:</label>
                 <input asp-for="anexo_cel" class="form-control" />
                 <span asp-validation-for="anexo_cel" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="status" class="control-label"></label>
                 <input asp-for="status" class="form-control" />
                 <span asp-validation-for="status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 <label asp-for="data_aber" class="control-label"></label>
                 <input asp-for="data_aber" class="form-control" />
                 <span asp-validation-for="data_aber" class="text-danger"></span>
-            </div>
+            </div>*@
+
             <div class="form-group">
-                <label asp-for="hora_abert" class="control-label"></label>
-                <input asp-for="hora_abert" class="form-control" />
-                <span asp-validation-for="hora_abert" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+@*<div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -17,7 +17,6 @@ namespace plataformaordemdeservico.Entidades
         public int status { get; set; }
         public DateTime data_aber { get; set; }
         public DateTime hora_abert { get; set; }
-
         public int protocolo { get; set; }
 
     }
