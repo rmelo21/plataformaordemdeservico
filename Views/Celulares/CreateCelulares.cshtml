@@ -3,35 +3,46 @@
 @{
     ViewData["Title"] = "CreateCelulares";
 }
+
+</br>
+
+<h2>Solicitação de Reparo - Celulares</h2>
+
+</br></br>
+
+<hr />
+
 <style>
-    p {
-        display: block;
-        border-radius: 10%;
-        color: rgba(0,115,132);
-        font-size: 50%;
+    h2 {
+        text-align: center;
+    }
+    .text-bnt {
+        color: rgb(0,115,132);
+        font-size: 16px;
+    }
+
+    .btn-save {
+        background-color: rgb(34 31 32); /* Green */
+        border: solid rgb(0,115,132);
+        color: rgb(0,115,132);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: solid;
+        display: inline-block;
+        font-size: 16px;
     }
 </style>
 
-<br />
-
-<h4>Solicitação de Reparo - Celulares</h4>
-@*<hr />*@
 <div class="row">
-    <div class="col-md-4">
-        <div>
-            @*<p>
-              
-               <p>*</p>
-                Tempo para resposta
-            </p>*@
-        </div>
+    <div class="col-md-6 text-bnt">
+       
         <form asp-action="CreateCelulares">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
-                <label asp-for="cod_cel" class="control-label"></label>
-                <input asp-for="cod_cel" class="form-control" />
-                <span asp-validation-for="cod_cel" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="cod_cel" class="control-label"></label>
+                    <input asp-for="cod_cel" class="form-control" />
+                    <span asp-validation-for="cod_cel" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="modelo_cel" class="control-label">Modelo do celular:</label>
                 <input asp-for="modelo_cel" class="form-control" />
@@ -44,7 +55,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="carregador_cel" class="control-label">Possui carregador</label>
-                <input asp-for="carregador_cel" class="form-control" />
+                <input type="checkbox" asp-for="carregador_cel" class="form-control" />
                 <span asp-validation-for="carregador_cel" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -58,26 +69,26 @@
                 <span asp-validation-for="anexo_cel" class="text-danger"></span>
             </div>
             @*<div class="form-group">
-                <label asp-for="status" class="control-label"></label>
-                <input asp-for="status" class="form-control" />
-                <span asp-validation-for="status" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="status" class="control-label"></label>
+                    <input asp-for="status" class="form-control" />
+                    <span asp-validation-for="status" class="text-danger"></span>
+                </div>*@
             @*<div class="form-group">
-                <label asp-for="data_aber" class="control-label"></label>
-                <input asp-for="data_aber" class="form-control" />
-                <span asp-validation-for="data_aber" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="data_aber" class="control-label"></label>
+                    <input asp-for="data_aber" class="form-control" />
+                    <span asp-validation-for="data_aber" class="text-danger"></span>
+                </div>*@
 
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-secondary btn-save text-bnt" />
             </div>
         </form>
     </div>
 </div>
 
 @*<div>
-    <a asp-action="Index">Back to List</a>
-</div>*@
+        <a asp-action="Index">Back to List</a>
+    </div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

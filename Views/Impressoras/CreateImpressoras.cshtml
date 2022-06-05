@@ -4,19 +4,43 @@
     ViewData["Title"] = "CreateImpressoras";
 }
 
-</br></br></br></br>
+</br>
 
-<h4>Solicitação de Reparo - Impressoras</h4>
+<h2>Solicitação de Reparo - Impressoras</h2>
+</br></br>
 <hr />
+
+<style>
+    h2 {
+        text-align: center;
+    }
+    .text-bnt {
+        color: rgb(0,115,132);
+        font-size: 16px;
+    }
+
+    .btn-save {
+        background-color: rgb(34 31 32); /* Green */
+        border: solid rgb(0,115,132);
+        color: rgb(0,115,132);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: solid;
+        display: inline-block;
+        font-size: 16px;
+    }
+</style>
+
+
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 text-bnt">
         <form asp-action="CreateImpressoras">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
-                <label asp-for="cod_imp" class="control-label"></label>
-                <input asp-for="cod_imp" class="form-control" />
-                <span asp-validation-for="cod_imp" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="cod_imp" class="control-label"></label>
+                    <input asp-for="cod_imp" class="form-control" />
+                    <span asp-validation-for="cod_imp" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="modelo_imp" class="control-label">Modelo da Impressora:</label>
                 <input asp-for="modelo_imp" class="form-control" />
@@ -34,7 +58,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="carregador_cel" class="control-label">Possui carregador:</label>
-                <input asp-for="carregador_cel" class="form-control" />
+                <input type="checkbox" asp-for="carregador_cel" class="form-control" />
                 <span asp-validation-for="carregador_cel" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -48,26 +72,26 @@
                 <span asp-validation-for="anexo_imp" class="text-danger"></span>
             </div>
             @*<div class="form-group">
-                <label asp-for="status" class="control-label"></label>
-                <input asp-for="status" class="form-control" />
-                <span asp-validation-for="status" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="status" class="control-label"></label>
+                    <input asp-for="status" class="form-control" />
+                    <span asp-validation-for="status" class="text-danger"></span>
+                </div>*@
             @*<div class="form-group">
-                <label asp-for="data" class="control-label"></label>
-                <input asp-for="data" class="form-control" />
-                <span asp-validation-for="data" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="data" class="control-label"></label>
+                    <input asp-for="data" class="form-control" />
+                    <span asp-validation-for="data" class="text-danger"></span>
+                </div>*@
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-secondary text-bnt btn-save" />
             </div>
         </form>
     </div>
 </div>
 
 @*<div>
-    <a asp-action="Index">Back to List</a>
-</div>*@
+        <a asp-action="Index">Back to List</a>
+    </div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
