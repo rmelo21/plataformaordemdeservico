@@ -17,18 +17,28 @@
 
     header {
         background-color: rgb(34 31 32);
+        /*background-color: rgb(0 0 0);*/
         color: rgb(0,115,132);
+        padding: 0;
+    }
+
+    .top-bar {
+
     }
 
     body {
+        padding: 0;
         background-color: rgb(34 31 32);
         color: rgb(0,115,132);
         font-size: 30px;
         
     }
+    h2 {
+        text-align: center;
+    }
 
     .text {
-        color: rgb(0,115,132);
+        color: rgb(0,115,132) !important;
         
 
     }
@@ -39,6 +49,15 @@
         text-align: center;
     }
 
+    .box-login {
+        position:absolute;
+        right: 200px;
+        margin-top: 0;
+        font-size: 15px;
+        display: table;
+        
+        
+    }
 
     .footer-basic {
         padding: 40px;
@@ -110,16 +129,31 @@
 
 
 <body>
+
+    
     <header>
-       
+
+        
+
+
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 ">
+
+            <div class="box-login navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-0">
+                    <li class="nav-item">
+                        <a class="nav-link text" asp-area="" asp-controller="Cadastro" asp-action="CreateCadastro">cadastre-se</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text" asp-area="" asp-controller="Cadastro" asp-action="CreateCadastro">cadastre-se</a>
+                    </li>
+                </ul>
+            </div>
             <img src="~/images/SD-INFORMÁTICA_logotipo.png" width="200" height="160" />
+
             <div class="container">
                 @*<a class="navbar-brand"  asp-area="" asp-controller="Home" asp-action="Index"></a>*@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="true" s aria-label="Toggle navigation">
-
-
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -150,15 +184,14 @@
                         @*<li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MinhaConta">Minhas Conta</a>
                     </li>*@
-                        <li class="nav-item">
-                            <a class="nav-link text" asp-area="" asp-controller="Cadastro" asp-action="CreateCadastro">Cadastre-se</a>
-                        </li>
+
 
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -168,25 +201,6 @@
         </main>
     </div>
 
-
-    <div class="footer-basic">
-        <footer>
-            <div class="social">
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a class="nav-link text" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a></li>
-                    <li class="list-inline-item"><a class="nav-link text" asp-area="" asp-controller="Home" asp-action="SobreNos">Sobre nós</a></li>
-                    <li class="list-inline-item"><a class="nav-link text" asp-area="" asp-controller="FaleConosco" asp-action="CreateFaleConosco">Fale Conosco</a></li>
-                </ul>
-                <br />
-                <a href="#"> <i class="icon ion-social-snapchat"> <img src="~/images/linkedid.png"></i></a>
-                <a href="#"><i class="icon ion-social-twitter"> <img src="~/images/facebook.png"> </i></a>
-                <a href="#"><i class="icon ion-social-facebook"> <img src="~/images/insta.png"> </i></a>
-                <a href=""> <i class="icon ion-social-linked"> <img src="~/images/Whatsapp.png"> </i> </a>
-            </div>
-            
-            <p class="copyright">SD - INFORMATICA © 2022</p>
-        </footer>
-    </div>
 
 
 
