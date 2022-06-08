@@ -39,8 +39,13 @@
 
     .text {
         color: rgb(0,115,132) !important;
-        
+        font-size: 30px;
 
+    }
+
+    .text-login {
+        color: rgb(0,115,132) !important;
+        font-size: 16px;
     }
 
     .box {
@@ -132,19 +137,15 @@
 
     
     <header>
-
-        
-
-
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 ">
 
             <div class="box-login navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-0">
                     <li class="nav-item">
-                        <a class="nav-link text" asp-area="" asp-controller="Cadastro" asp-action="CreateCadastro">cadastre-se</a>
+                        <a class="nav-link text-login" asp-area="" asp-controller="Cadastro" asp-action="CreateCadastro">Cadastre-se</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text" asp-area="" asp-controller="Cadastro" asp-action="CreateCadastro">cadastre-se</a>
+                        <a class="nav-link text-login" asp-area="" asp-controller="Login" asp-action="Index">Entrar</a>
                     </li>
                 </ul>
             </div>
@@ -178,15 +179,7 @@
                         <li class="nav-item">
                             <a class="nav-link text" asp-area="" asp-controller="Celulares" asp-action="CreateCelulares">Celulares</a>
                         </li>
-                        @*<li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MinhasSolicitacoes">Minhas Solicitações</a>
-                    </li>*@
-                        @*<li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="MinhaConta">Minhas Conta</a>
-                    </li>*@
-
-
-                    </ul>
+                                           </ul>
                 </div>
             </div>
         </nav>
