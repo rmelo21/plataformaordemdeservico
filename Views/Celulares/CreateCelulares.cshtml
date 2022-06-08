@@ -58,12 +58,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="descricao_cel" class="control-label">Descrição do problema:</label>
-                <input asp-for="descricao_cel" class="form-control" />
+                <input type="text" asp-for="descricao_cel" class="form-control" />
                 <span asp-validation-for="descricao_cel" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-text">
                 <label asp-for="anexo_cel" class="control-label">anexo:</label>
-                <input asp-for="anexo_cel" class="form-control" />
+                <textarea name="Descrição" rows="20" cols="30"></textarea>
+                <input text type="file" asp-for="anexo_cel" class="form-control" />
                 <span asp-validation-for="anexo_cel" class="text-danger"></span>
             </div>
             @*<div class="form-group">
