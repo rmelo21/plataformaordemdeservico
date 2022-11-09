@@ -36,46 +36,47 @@
         <form asp-action="CreateMonitores">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
-                    <label asp-for="cod_mon" class="control-label"></label>
-                    <input asp-for="cod_mon" class="form-control" />
-                    <span asp-validation-for="cod_mon" class="text-danger"></span>
-                </div>*@
+            <label asp-for="cod_mon" class="control-label"></label>
+            <input asp-for="cod_mon" class="form-control" />
+            <span asp-validation-for="cod_mon" class="text-danger"></span>
+        </div>*@
             <div class="form-group">
-                <label asp-for="modelo_mon" class="control-label">Modelo do monitor:</label>
-                <input asp-for="modelo_mon" class="form-control" />
+                <label class="control-label"></label>
+                <input asp-for="modelo_mon" class="form-control" placeholder="Modelo do Monitor" />
                 <span asp-validation-for="modelo_mon" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="fabricante" class="control-label">Fabricante:</label>
-                <input asp-for="fabricante" class="form-control" />
+                <label class="control-label"></label>
+                <input asp-for="fabricante" class="form-control" placeholder="Fabricante" />
                 <span asp-validation-for="fabricante" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="polegadas" class="control-label">Polegadas:</label>
-                <input asp-for="polegadas" class="form-control" />
+                <label class="control-label"></label>
+                <input asp-for="polegadas" class="form-control" placeholder="Polegadas" />
                 <span asp-validation-for="polegadas" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="descricao_mon" class="control-label">Descrição do problema:</label>
-                <input asp-for="descricao_mon" class="form-control" />
+                <label class="control-label"></label>
+                <input asp-for="descricao_mon" class="form-control" placeholder="Descrição do problema" />
                 <span asp-validation-for="descricao_mon" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="anexo_mon" class="control-label">anexo</label>
-                <input asp-for="anexo_mon" class="form-control" />
+                <label class="control-label"></label>
+                <input asp-for="anexo_mon" class="form-control" placeholder="Anexo" />
                 <span asp-validation-for="anexo_mon" class="text-danger"></span>
             </div>
             @*<div class="form-group">
-                    <label asp-for="status" class="control-label"></label>
-                    <input asp-for="status" class="form-control" />
-                    <span asp-validation-for="status" class="text-danger"></span>
-                </div>*@
+            <label asp-for="status" class="control-label"></label>
+            <input asp-for="status" class="form-control" />
+            <span asp-validation-for="status" class="text-danger"></span>
+        </div>*@
             @*<div class="form-group">
-                    <label asp-for="data" class="control-label"></label>
-                    <input asp-for="data" class="form-control" />
-                    <span asp-validation-for="data" class="text-danger"></span>
-                </div>*@
-
+            <label asp-for="data" class="control-label"></label>
+            <input asp-for="data" class="form-control" />
+            <span asp-validation-for="data" class="text-danger"></span>
+        </div>*@
+            <br />
+            <br />
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-secondary text-bnt btn-save" />
             </div>
